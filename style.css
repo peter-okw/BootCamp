@@ -1,0 +1,24 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6 1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: aliceblue;
+}
+
+.grid-item {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 30px;
+    row-gap: 30px;
+}
+
