@@ -6,19 +6,49 @@
     gap: 20px;
     background-color: aliceblue;
 }
-
 .grid-item {
     background-color: blue;
     padding: 20px;
-    text-align: center;
+    text-align: justify;
 }
-
-.header-container { 
+/*.header-container { 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: pink;
     justify-content: space-between;
     align-items:flex-end;
-    padding: 30px;
-    row-gap: 30px;
+    padding: 18px;
+    row-gap: 40px;
 }
-
+.navbar {
+    display:inline-flex ;
+    gap: 20px;
+    background-color: chartreuse;
+    padding: 15px;
+    font-size: 15px;
+}
+*/
+.header-container { 
+    display: flex;
+    background-color: pink;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 15px;
+}
+.navbar {
+    display:inline-flex ;
+    gap: 20px;
+    background-color: aquamarine;
+    padding: 15px;
+    font-size: 15px;
+    margin-left: -10px;
+}
+.navbar a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-size: 30px;
+}
+.navbar a:hover {
+    background-color: aqua;
+    text-decoration: underline;
+}
