@@ -19,18 +19,19 @@ body {
 .header-container { 
     display: flex;
     position: sticky;
-    background-color: rgb(100, 187, 237);
+    background-color: lightskyblue;
     justify-content: space-between;
     align-items:flex-end;
     top: 0;
     z-index: 1000;
     padding: 15px;
+    border-radius: 10px;
 }
 .navbar {
     display: inline-flex;
     position: sticky;
     gap: 20px;
-    background-color: rgb(25, 0, 255);
+    background-color: rgb(0, 153, 255);
     padding: 10px;
     border-radius: 10px;
     font-size: 5px;
@@ -90,6 +91,10 @@ body {
     word-wrap: break-word; /* Ensure long words wrap */
     overflow-wrap: break-word; /* Ensure text wraps properly */
 } 
+.hero p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #007bff;
+}
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -116,10 +121,10 @@ h1 {
     padding: 15px;
 }
 .outcomes p::before {
-    content: ""; /* Placeholder for the image */
+    content: ""; 
     display: block;
-    width: 50%px; /* Set image width */
-    height: 50px; /* Set image height */
+    width: 50%px; 
+    height: 50px; 
     background-size: contain; /* Ensure the image fits */
     background-repeat: no-repeat; /* Prevent image repetition */
     background-position: center; /* Center the image */
@@ -127,22 +132,51 @@ h1 {
 }
 
 .outcomes p#p1::before {
-    background-image: url('images/rapid-turn.png'); /* Replace with the actual path */
+    background-image: url('images/rapid-turn.png'); 
 }
 .outcomes p#p2::before {
-    background-image: url('images/cus-supp.png'); /* Replace with the actual path */
+    background-image: url('images/cus-supp.png');  
 }
 .outcomes p#p3::before {
-    background-image: url('images/gen-sup-proj.png'); /* Replace with the actual path */
+    background-image: url('images/gen-sup-proj.png'); 
 }
 .outcomes p#p4::before {
-    background-image: url('images/cloud-service.png'); /* Replace with the actual path */
+    background-image: url('images/cloud-service.png'); 
 }
 .outcomes p#p5::before {
-    background-image: url('images/value.png'); /* Replace with the actual path */
+    background-image: url('images/value.png');
 }
+
+.outcomes p {
+    position: relative; /* Ensure the hover text is positioned relative to the paragraph */
+    text-align: center;
+}
+
+.outcomes p .hover-text {
+    display: none; /* Hide the hover text by default */
+    position: absolute;
+    top: 100%; /* Adjust this value to position the hover text above the image */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: aliceblue; /* Background color for the hover text */
+    color: rgb(0, 60, 255); /* Text color */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    height: auto;
+    white-space: nowrap; /* Prevent text from wrapping */
+    line-height: 1.5; /* Adjust line spacing */
+    z-index: 10; /* Ensure the hover text appears above other elements */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better visibility */
+}
+
+.outcomes p:hover .hover-text {
+    display: block; /* Show the hover text on hover */
+}
+
+
 .outcomes-container {
-    background-color: ;
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
@@ -160,18 +194,29 @@ h1 {
     padding: 20px;
     border-radius: 10px;
 }
+
+/*Styling for Contact Us Page */
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 60px;
 }
+.contact-container p {
+    font-size: 20px;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+.contact-container #assure-message {
+    font-size: 20px;
+    color: cornflowerblue;
+}
+
 form {
-    background-color: cyan;
+    background-color: lightblue;
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
     width: 50%;
 }
 .form-group {
@@ -224,7 +269,10 @@ input, textarea {
 textarea {
     resize: vertical;
 }
-
+.form-container #po {
+    font-weight: normal;
+    font-size: 15px;
+}
 #submit {
     font-size: 1.1rem;
     padding: 0.7em 1.2em;
@@ -256,9 +304,10 @@ textarea {
     margin:left ;
 }
 #home-f {
-    width: 8%;
-    height: 8%;
+    width: 40px;
+    height: 40px;
     background-color: rgb(100, 187, 237);
+    cursor: pointer;
 }
 .main-items-container {
     display: flex;
@@ -298,4 +347,477 @@ textarea {
 #googleplus-image {
     width: 7%;
     height: auto;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between; /* Ensures both sections stay parallel */
+    align-items: stretch; /* Makes both sections equal in height */
+    gap: 40px; /* Adds spacing between text and form */
+    max-width: 1200px; /* Limits container width */
+    margin: auto; /* Centers container */
+    padding: 20px;
+}
+.map-container {
+    width: 100%;
+    max-width: 600px; /* Control max width */
+    margin-top: 80px; /* Add spacing between text and map */
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Ensure the map appears properly */
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 15px;
+}
+input#address {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.text, .form-container {
+    flex: 1; /* Ensures both sections take up equal space */
+    max-width: 50%; /* Ensures both sections are exactly parallel */
+}
+
+
+#assure-message {
+    padding-top: 40px;
+    color:darkcyan;
+    font-size:30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contact-message{
+    padding-top: 80px;
+    color: darkcyan;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Make the form stretch to the same height as the text */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures the form stretches */
+    width: 100%;
+}
+
+.form-group {
+    flex-grow: 1; /* Ensures form fields take up equal space */
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text, .form-container {
+        max-width: 100%;
+    }
+}
+
+.map-container {
+    width: 100%;
+    max-width: 600px; /* Control max width */
+    margin-top: 30px; /* Add spacing between text and map */
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for About Us Page^/
+/* Parent container to align children side by side */
+
+.content-container {
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Arranges items in a row */
+    align-items: center; /* Aligns items vertically */
+    justify-content: flex-start; /* Adds spacing between items */
+    gap: 60px; /* Optional: Adds space between items */
+    max-width: 1200px; /* Ensures a clean width */
+    margin: 0 auto; /* Centers the container */
+    padding: 40px;
+}
+
+.header-cotainer h1 {
+    color: black;
+}
+.header-cotainer h3 {
+    color: black;
+}
+/* Image container */
+
+.page-image-container {
+    flex: 1; /* Allows it to grow and take available space */
+    max-width: 50%; /* Ensures it doesn’t exceed half the width */
+    margin-left: -90px ;
+    align-items: flex-start;
+}
+#booking-button{
+    align-items: center;
+    
+}
+
+/* Styling for Case Study Page */
+.case-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensure text aligns well */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+h1 {
+    display: block;
+    max-width: 100%;
+}
+
+#case-paragraph {
+    padding-top: 10px;
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; /* Limit the width of the paragraph for better readability */
+    margin: 0 auto; /* Center the paragraph within the container */
+    font-size: 20px;
+}
+
+.case-subjects-container {
+    display: flex;
+    justify-content: center; /* Centers the images */
+    gap: 20px; /* Adds spacing between images */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding-bottom: 60px;
+}
+
+.case-subject-1,
+.medic-subject,
+.business-realestate {
+    position: relative;
+    width: 500px; /* Adjust image width */
+    height: 400px; /* Adjust image height */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.case-subject-1 img,
+.medic-subject img,
+.business-realestate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.case-subject-1:hover img,
+.medic-subject:hover img,
+.business-realestate:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3); /* Lighter overlay */
+    transition: background 0.3s ease-in-out;
+}
+
+.case-subject-1:hover .overlay,
+.medic-subject:hover .overlay,
+.business-realestate:hover .overlay {
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay on hover */
+}
+/* styling for legal experts case study page */
+.legal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto; 
+    background-color: lightblue; 
+    padding-bottom: 80px; 
+    border-radius: 10px;
+}
+.legal-container h1 {
+    color: black;
+}
+.story-legal {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+    padding-bottom: 60px;
+    background-color: lightblue; 
+}
+.story-legal p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;
+}
+#Back2CaseStudies {
+    background-color: rgb(0, 153, 255);
+    color: white;
+}
+.legal-image-container {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    gap: 400px;
+}
+#legal-man {
+    margin-left: -30px;
+}
+.story-legal h4 {
+    font-size: 25px;
+}
+/* Styling for Medical Case Study Page*/
+.med-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto; 
+    background-color: lightblue; 
+    padding-bottom: 80px; 
+}
+.med-content-container h1 {
+    color: black;
+}
+.story-medical {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+    padding-bottom: 60px;
+    background-color: lightblue;  
+}
+.story-medical p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px; 
+}
+.medic-image-container {
+    display: flex;
+    flex-direction:row;
+    background-color: aliceblue;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    gap: 400px;
+}
+/* Styling for Real Estate Case Study Page */
+.realestate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto; 
+    background-color: lightblue; 
+    padding-bottom: 80px; 
+    border-radius: 10px;
+}
+.realestate-container h1 {
+    color: black;
+}
+.realestate-story {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+    padding-bottom: 60px;
+    background-color: lightblue;
+}
+.realestate-story p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;  
+}
+.real-image-container {
+    display: flex;
+    flex-direction:row;
+   
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    gap: 400px;
+}
+/* Styling the Data Centre Page */
+.data-centre-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto; 
+    background-color: lightskyblue; 
+    padding-bottom: 80px; 
+}
+.data-centre-container h1 {
+   color: black;
+}
+.data-c-intro {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+    padding-bottom: 60px;
+}
+.data-c-intro p {
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;
+    color: black;
+}
+.data-c-image-container {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    gap: 400px;
+}
+.data-paragraph {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+    padding-bottom: 60px;
+    background-color: lightskyblue;
+}
+.data-paragraph p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;
+    color: black; 
+}
+.d-class-section h4 {
+    color: black;
+}
+/* Styling for the Cloud Services Page */
+.cloud-services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensure text aligns well */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    padding-bottom: 20px;
+}
+.cloud-services-container p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;
+}
+.cloud-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px; 
+}
+
+/* Styling for Managed Services Page */
+.first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensure text aligns well */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    padding-bottom: 20px;
+    background-color: cornflowerblue;
+}
+.first-container h1 {
+    color: antiquewhite;
+}
+.first-container p {
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 20px;
+    color: antiquewhite;
+}
+.managed-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.managed-story-container {
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto;
+    font-size: 18px;
+    
 }
