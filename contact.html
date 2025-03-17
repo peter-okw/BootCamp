@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <script defer src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    
     <link href="style.css" rel="stylesheet">
     <title>Contact Us</title>
 </head>
@@ -32,50 +33,44 @@
             
         </div>
         <div class="form-container">
-            <form id="contact-1">
+            <form action="http://localhost:3000/submit" method="POST" id="contact-1">
                 <div class="form-group">
                     <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" required>
+                    <input type="text" id="first-name" name="first_name" required>
                 </div>
                 <div class="form-group">
                     <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" required>
+                    <input type="text" id="last-name" name="last_name" required>
                 </div>
                 <div class="form-group">
                     <label for="company">Company:</label>
-                    <input type="text" id="company" required>
+                    <input type="text" id="company" name="company" required>
                 </div>
                 <div class="form-group">
                     <label for="industry">Your Company's Industry:</label>
-                    <input type="text" id="industry">
+                    <input type="text" id="industry" name="industry">
                 </div>
                 <div class="form-group">
                     <label for="email">Business E-mail:</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="number" id="phone">
+                    <input type="text" id="phone" name="phone">
                 </div>
                 <div class="form-group">
                     <label for="message">A Brief Summary of Your Inquiry:</label>
-                    <textarea id="message" rows="4"></textarea>
+                    <textarea id="message" name="message" rows="4"></textarea>
                 </div>
-    
                 <div class="form-group checkbox-group">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">I consent to receiving a newslatter from Syncronetics</label>
+                    <input type="checkbox" id="terms" name="consent" required>
+                    <label for="terms">I consent to receiving a newsletter from Syncronetics</label>
                 </div>
-                <br><br><br>
-                <p id="po">You can withdraw your consent at any time. Withdrawal of consent does not affect the lawfulness of previously undertaken contacts and data processing carried out on the basis of consent before its withdrawal. By submitting this form, you give us access to your personal data.</p>
-    
-                <a href="data-use.html">Syncronetics Data Use Policy</a>
-    
-    
                 <div class="form-group">
                     <input type="submit" id="submit" value="Submit">
                 </div>
             </form>
+            
         
         </div>
          
